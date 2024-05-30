@@ -24,16 +24,26 @@ def generate(input):
     ref_video = values["ref_video"]
     ref_image = download_file(ref_image)
     ref_video = download_file(ref_video)
-    command = [
+    command1 = [
         "python", "pose_align.py",
         "--imgfn_refer", ref_image,
         "--vidfn", ref_video
     ]
-    pose_align = subprocess.run(command, capture_output=True, text=True)
-    print("Standard Output:\n", pose_align.stdout)
-    print("Standard Error:\n", pose_align.stderr)
-    print("Return Code:", pose_align.returncode)
-    result = f"/content/MusePose/assets/poses/align/img_ref_video_dance.mp4"
+    pose_align = subprocess.run(command1, capture_output=True, text=True)
+    print("Standard Output 1:\n", pose_align.stdout)
+    print("Standard Error 1:\n", pose_align.stderr)
+    print("Return Code 1:", pose_align.returncode)
+    command2 = [
+        "python", "test_stage_r2.py",
+        "--config", "./configs/test_stage_r2.yaml",
+        "-W", "512", "-H", "512", "--ref_image", ref_image, "--dw_video", "/content/MusePose/assets/poses/align/img_ref_video_dance.mp4"
+    ]
+    test_stage_2 = subprocess.run(command2, capture_output=True, text=True)
+    print("Standard Output 2:\n", test_stage_2.stdout)
+    print("Standard Error 2:\n", test_stage_2.stderr)
+    print("Return Code 2:", test_stage_2.returncode)
+
+    result = f"/content/MusePose/output/video/final_video.mp4"
 
     response = None
     try:

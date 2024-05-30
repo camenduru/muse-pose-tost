@@ -19,7 +19,7 @@ RUN pip install -q opencv-python imageio imageio-ffmpeg ffmpeg-python av runpod 
     https://github.com/camenduru/wheels/releases/download/colab/mmcv-2.0.1-cp310-cp310-linux_x86_64.whl \
     moviepy av diffusers==0.24.0 einops omegaconf transformers==4.33.1 accelerate==0.29.3 mmdet mmpose
 
-RUN git clone https://github.com/TMElyralab/MusePose /content/MusePose
+RUN git clone -b runpod https://github.com/camenduru/MusePose /content/MusePose
 
 RUN aria2c --console-log-level=error -c -x 16 -s 16 -k 1M https://huggingface.co/camenduru/MusePose/resolve/main/MusePose/denoising_unet.pth -d /content/MusePose/pretrained_weights/MusePose -o denoising_unet.pth
 RUN aria2c --console-log-level=error -c -x 16 -s 16 -k 1M https://huggingface.co/camenduru/MusePose/resolve/main/MusePose/motion_module.pth -d /content/MusePose/pretrained_weights/MusePose -o motion_module.pth
