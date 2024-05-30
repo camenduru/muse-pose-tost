@@ -1,0 +1,34 @@
+{
+    "$schema": "http://json-schema.org/draft-04/hyper-schema#",
+    "type": "object",
+    "properties": {
+      "readme": {
+        "type": "string",
+        "title": "MusePose: a Pose-Driven Image-to-Video Framework for Virtual Human Generation",
+        "author": "Zhengyan Tong, Chao Li, Zhaokang Chen, Bin Wu, Wenjiang Zhou",
+        "code": "https://github.com/TMElyralab/MusePose",
+        "jupyter": "https://github.com/camenduru/MusePose-jupyter",
+        "post": "https://x.com/camenduru/status/1795919443828130287",
+        "tags": [
+          "Image to Video"
+        ],
+        "widget": "readme"
+      },
+      "input_image_check": {
+        "type": "string",
+        "description": "Input Image URL",
+        "widget": "textarea"
+      },
+      "ref_video": {
+        "type": "string",
+        "description": "Input Video URL",
+        "widget": "textarea"
+      }
+    },
+    "buttons": [
+      {
+        "id": "enter",
+        "label": "🥪 Enter"
+      }
+    ]
+  }
