@@ -11,7 +11,7 @@
       "post": "https://x.com/camenduru/status/1795919443828130287",
       "api": "https://github.com/camenduru/tost-api-examples/blob/main/v1/muse-pose.ipynb",
       "tags": [
-        "Image to Video"
+        "Video to Video"
       ],
       "widget": "readme"
     },
@@ -24,6 +24,14 @@
       "type": "string",
       "description": "Input Video URL",
       "widget": "textarea"
+    },
+    "example": {
+      "type": "string",
+      "image1": "https://files.catbox.moe/qqtybz.jpg",
+      "image2": "https://files.catbox.moe/fuk5ba.gif",
+      "image3": "https://fakeimg.pl/600x877/282828/eae0d0/?text=<in%20out>#.png",
+      "image4": "https://files.catbox.moe/9xrkhk.gif",
+      "widget": "example"
     }
   },
   "buttons": [
